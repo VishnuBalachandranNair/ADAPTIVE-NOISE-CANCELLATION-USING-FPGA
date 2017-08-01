@@ -1,0 +1,5 @@
+vhdl work "../lcd_function.vhd"
+vhdl work "../ASCII_PACKAGE.vhd"
+vhdl work "../LCD_DISPLAY_MODULE.vhd"
+verilog work "../async.v"
+vhdl work "../MAIN.vhd"

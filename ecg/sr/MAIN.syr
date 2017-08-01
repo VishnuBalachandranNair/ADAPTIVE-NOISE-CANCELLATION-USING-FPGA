@@ -1,0 +1,1384 @@
+Release 14.5 - xst P.58f (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.98 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.99 secs
+ 
+--> Reading design: MAIN.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "MAIN.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "MAIN"
+Output Format                      : NGC
+Target Device                      : xc3s100e-5-tq144
+
+---- Source Options
+Top Module Name                    : MAIN
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "D:/siva/hw/ecg/ASCII_PACKAGE.vhd" in Library work.
+Compiling vhdl file "D:/siva/hw/ecg/lcd_function.vhd" in Library work.
+Architecture function_set of Entity function_set is up to date.
+Compiling vhdl file "D:/siva/hw/ecg/LCD_DISPLAY_MODULE.vhd" in Library work.
+Architecture behav_lcd of Entity lcd_display_module is up to date.
+Compiling vhdl file "D:/siva/hw/ecg/MAIN.vhd" in Library work.
+Entity <main> compiled.
+Entity <main> (Architecture <behav>) compiled.
+Compiling verilog file "../async.v" in library work
+Module <async_transmitter> compiled
+Module <async_receiver> compiled
+Module <ASSERTION_ERROR> compiled
+Module <BaudTickGen> compiled
+No errors in compilation
+Analysis of file <"MAIN.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <MAIN> in library <work> (architecture <behav>).
+
+Analyzing hierarchy for module <async_receiver> in library <work> with parameters.
+	Baud = "00000000000000011100001000000000"
+	ClkFrequency = "00000001011011100011011000000000"
+	Oversampling = "00000000000000000000000000001000"
+	l2o = "00000000000000000000000000000100"
+
+Analyzing hierarchy for entity <LCD_DISPLAY_MODULE> in library <work> (architecture <behav_lcd>).
+
+Analyzing hierarchy for module <BaudTickGen> in library <work> with parameters.
+	AccWidth = "00000000000000000000000000010000"
+	Baud = "00000000000000011100001000000000"
+	ClkFrequency = "00000001011011100011011000000000"
+	Inc = "00000000000000000000100111010101"
+	Oversampling = "00000000000000000000000000001000"
+	ShiftLimiter = "00000000000000000000000000000101"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <MAIN> in library <work> (Architecture <behav>).
+INFO:Xst:2679 - Register <display<1>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<2>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<3>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<4>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<5>> in unit <MAIN> has a constant value of 01001001 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<6>> in unit <MAIN> has a constant value of 01001110 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<7>> in unit <MAIN> has a constant value of 01010000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<8>> in unit <MAIN> has a constant value of 01010101 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<9>> in unit <MAIN> has a constant value of 01010100 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<10>> in unit <MAIN> has a constant value of 00111101 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<11>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<20>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<21>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<22>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<23>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<24>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<25>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<26>> in unit <MAIN> has a constant value of 01001111 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<27>> in unit <MAIN> has a constant value of 01010101 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<28>> in unit <MAIN> has a constant value of 01010100 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<29>> in unit <MAIN> has a constant value of 01010000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<30>> in unit <MAIN> has a constant value of 01010101 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<31>> in unit <MAIN> has a constant value of 01010100 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<32>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<33>> in unit <MAIN> has a constant value of 00111101 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<34>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<35>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<36>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<37>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<38>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<39>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <display<40>> in unit <MAIN> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+Entity <MAIN> analyzed. Unit <MAIN> generated.
+
+Analyzing module <async_receiver> in library <work>.
+	Baud = 32'sb00000000000000011100001000000000
+	ClkFrequency = 32'sb00000001011011100011011000000000
+	Oversampling = 32'sb00000000000000000000000000001000
+	l2o = 32'sb00000000000000000000000000000100
+	Calling function <log2>.
+Module <async_receiver> is correct for synthesis.
+ 
+Analyzing module <BaudTickGen> in library <work>.
+	AccWidth = 32'sb00000000000000000000000000010000
+	Baud = 32'sb00000000000000011100001000000000
+	ClkFrequency = 32'sb00000001011011100011011000000000
+	Inc = 32'sb00000000000000000000100111010101
+	Oversampling = 32'sb00000000000000000000000000001000
+	ShiftLimiter = 32'sb00000000000000000000000000000101
+Module <BaudTickGen> is correct for synthesis.
+ 
+Analyzing Entity <LCD_DISPLAY_MODULE> in library <work> (Architecture <behav_lcd>).
+WARNING:Xst:819 - "D:/siva/hw/ecg/LCD_DISPLAY_MODULE.vhd" line 37: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <dis>
+Entity <LCD_DISPLAY_MODULE> analyzed. Unit <LCD_DISPLAY_MODULE> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <LCD_DISPLAY_MODULE>.
+    Related source file is "D:/siva/hw/ecg/LCD_DISPLAY_MODULE.vhd".
+WARNING:Xst:646 - Signal <DATA> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <LCD_E>.
+    Found 11-bit up counter for signal <dcount>.
+    Found 10-bit register for signal <dis>.
+    Found 11-bit comparator lessequal for signal <LCD_E$cmp_le0000> created at line 322.
+    Found 14-bit up counter for signal <ledcount>.
+    Found 14-bit comparator greater for signal <ledcount$cmp_gt0000> created at line 328.
+    Found 14-bit comparator lessequal for signal <ledcount$cmp_le0000> created at line 331.
+    Found 14-bit comparator lessequal for signal <ledcount$cmp_le0001> created at line 328.
+    Found 14-bit up counter for signal <state>.
+    Summary:
+	inferred   3 Counter(s).
+	inferred  11 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+Unit <LCD_DISPLAY_MODULE> synthesized.
+
+
+Synthesizing Unit <BaudTickGen>.
+    Related source file is "../async.v".
+    Found 17-bit register for signal <Acc>.
+    Found 16-bit adder carry out for signal <Acc$addsub0000> created at line 186.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <BaudTickGen> synthesized.
+
+
+Synthesizing Unit <async_receiver>.
+    Related source file is "../async.v".
+    Found finite state machine <FSM_0> for signal <RxD_state>.
+    -----------------------------------------------------------------------
+    | States             | 11                                             |
+    | Transitions        | 22                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 11                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Power Up State     | 0000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit register for signal <RxD_data>.
+    Found 1-bit register for signal <RxD_endofpacket>.
+    Found 1-bit register for signal <RxD_data_ready>.
+    Found 2-bit updown counter for signal <Filter_cnt>.
+    Found 6-bit up counter for signal <GapCnt>.
+    Found 3-bit up counter for signal <OversamplingCnt>.
+    Found 1-bit register for signal <RxD_bit>.
+    Found 1-bit 4-to-1 multiplexer for signal <RxD_bit$mux0000>.
+    Found 2-bit register for signal <RxD_sync>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   3 Counter(s).
+	inferred  13 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <async_receiver> synthesized.
+
+
+Synthesizing Unit <MAIN>.
+    Related source file is "D:/siva/hw/ecg/MAIN.vhd".
+WARNING:Xst:1306 - Output <tx> is never assigned.
+WARNING:Xst:1780 - Signal <tx_stop> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <tx_data> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <tx_baud> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <transmit> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <top> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <rx_idle> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <rx_eop> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <aa1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <a2> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <a1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <a0> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <YL1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <YH1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <TT5> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <TT4> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <TT3> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <TT2> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <TT1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <TT0> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1781 - Signal <Co_effecient> is used but never assigned. Tied to default value.
+    Found finite state machine <FSM_1> for signal <received>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Power Up State     | 0000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:643 - "D:/siva/hw/ecg/MAIN.vhd" line 173: The result of a 32x32-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 64-bit register for signal <display<12:19>>.
+    Found 320-bit register for signal <display<41:80>>.
+    Found 8-bit register for signal <fo1>.
+    Found 32-bit comparator less for signal <fo1$cmp_lt0000> created at line 176.
+    Found 32-bit up counter for signal <ind>.
+    Found 32-bit up counter for signal <index>.
+    Found 32-bit adder for signal <received$add0000> created at line 174.
+    Found 32-bit adder for signal <received$addsub0000> created at line 156.
+    Found 32-bit comparator greatequal for signal <received$cmp_ge0000> created at line 157.
+    Found 32-bit comparator greatequal for signal <received$cmp_ge0001> created at line 176.
+    Found 32-bit up accumulator for signal <sum1>.
+    Found 8-bit register for signal <tempt>.
+    Found 40-bit register for signal <tp>.
+    Found 33-bit adder for signal <tp$add0000> created at line 173.
+    Found 32x32-bit multiplier for signal <tp$mult0001> created at line 173.
+    Found 1600-bit register for signal <xn>.
+INFO:Xst:738 - HDL ADVISOR - 1600 flip-flops were inferred for signal <xn>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+INFO:Xst:738 - HDL ADVISOR - 384 flip-flops were inferred for signal <display>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   2 Counter(s).
+	inferred   1 Accumulator(s).
+	inferred 2040 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred   1 Multiplier(s).
+	inferred   3 Comparator(s).
+Unit <MAIN> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 1
+ 32x32-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 4
+ 16-bit adder carry out                                : 1
+ 32-bit adder                                          : 2
+ 33-bit adder                                          : 1
+# Counters                                             : 7
+ 11-bit up counter                                     : 1
+ 14-bit up counter                                     : 1
+ 2-bit updown counter                                  : 1
+ 3-bit up counter                                      : 1
+ 32-bit up counter                                     : 2
+ 6-bit up counter                                      : 1
+# Accumulators                                         : 1
+ 32-bit up accumulator                                 : 1
+# Registers                                            : 109
+ 1-bit register                                        : 4
+ 10-bit register                                       : 1
+ 17-bit register                                       : 1
+ 2-bit register                                        : 1
+ 32-bit register                                       : 50
+ 40-bit register                                       : 1
+ 8-bit register                                        : 51
+# Comparators                                          : 4
+ 11-bit comparator lessequal                           : 1
+ 32-bit comparator greatequal                          : 2
+ 32-bit comparator less                                : 1
+# Multiplexers                                         : 1
+ 1-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <received/FSM> on signal <received[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 00
+ 0001  | 01
+ 0010  | 11
+ 0011  | 10
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <m4/RxD_state/FSM> on signal <RxD_state[1:11]> with one-hot encoding.
+----------------------
+ State | Encoding
+----------------------
+ 0000  | 00000000001
+ 0001  | 00000000010
+ 1000  | 00000000100
+ 1001  | 00000001000
+ 1010  | 00000010000
+ 1011  | 00000100000
+ 1100  | 00001000000
+ 1101  | 00010000000
+ 1110  | 00100000000
+ 1111  | 01000000000
+ 0010  | 10000000000
+----------------------
+WARNING:Xst:1710 - FF/Latch <dis_0> (without init value) has a constant value of 0 in block <lab>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_70_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_70_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_70_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_70_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_70_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_70_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_70_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_59_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_59_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_59_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_59_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_59_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_59_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_59_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_64_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_64_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_64_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_64_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_64_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_64_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_64_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_66_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_66_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_66_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_66_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_66_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_66_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_66_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_71_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_71_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_71_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_71_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_71_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_71_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_71_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_65_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_65_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_65_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_65_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_65_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_65_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_65_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_62_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_62_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_62_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_62_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_62_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_62_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_62_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_56_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_56_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_56_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_56_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_56_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_56_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_56_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_61_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_61_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_61_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_61_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_61_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_61_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_61_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_58_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_58_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_58_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_58_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_58_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_58_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_58_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_63_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_63_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_63_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_63_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_63_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_63_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_63_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_57_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_57_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_57_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_57_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_57_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_57_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_57_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_76_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_76_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_76_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_76_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_76_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_76_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_76_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_80_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_80_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_80_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_80_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_80_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_80_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_80_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_75_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_75_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_75_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_75_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_75_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_75_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_75_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_79_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_79_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_79_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_79_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_79_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_79_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_79_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_78_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_78_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_78_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_78_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_78_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_78_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_78_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_77_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_77_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_77_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_77_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_77_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_77_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_77_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_73_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_73_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_73_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_73_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_73_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_73_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_73_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_67_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_67_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_67_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_67_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_67_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_67_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_67_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_72_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_72_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_72_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_72_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_72_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_72_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_72_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_69_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_69_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_69_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_69_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_69_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_69_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_69_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_74_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_74_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_74_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_74_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_74_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_74_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_74_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_68_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_68_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_68_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_68_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_68_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_68_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_68_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_41_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_41_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_41_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_41_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_41_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_41_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_41_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_19_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_19_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_19_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_19_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_19_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_19_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_19_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_18_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_18_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_18_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_18_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_18_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_18_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_18_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_44_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_44_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_44_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_44_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_44_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_44_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_44_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_43_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_43_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_43_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_43_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_43_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_43_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_43_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_42_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_42_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_42_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_42_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_42_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_42_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_42_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_15_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_15_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_15_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_15_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_15_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_15_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_15_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_13_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_13_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_13_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_13_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_13_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_13_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_13_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_12_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_12_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_12_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_12_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_12_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_12_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_12_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_17_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_17_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_17_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_17_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_17_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_17_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_17_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_16_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_16_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_16_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_16_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_16_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_16_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_16_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_14_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_14_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_14_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_14_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_14_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_14_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_14_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_54_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_54_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_54_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_54_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_54_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_54_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_54_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_48_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_48_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_48_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_48_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_48_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_48_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_48_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_53_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_53_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_53_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_53_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_53_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_53_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_53_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_55_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_55_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_55_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_55_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_55_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_55_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_55_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_60_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_60_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_60_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_60_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_60_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_60_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_60_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_49_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_49_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_49_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_49_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_49_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_49_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_49_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_51_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_51_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_51_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_51_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_51_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_51_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_51_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_45_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_45_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_45_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_45_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_45_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_45_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_45_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_50_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_50_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_50_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_50_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_50_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_50_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_50_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_52_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_52_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_52_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_52_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_52_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_52_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_52_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_47_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_47_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_47_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_47_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_47_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_47_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_47_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_46_7> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_46_6> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_46_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_46_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_46_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_46_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_46_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <display_41<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_42<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_43<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_44<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_50<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_45<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_51<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_46<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_52<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_47<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_53<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_48<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_54<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_49<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_60<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_55<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_61<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_56<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_57<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_62<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_63<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_58<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_64<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_59<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_70<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_65<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_71<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_66<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_72<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_67<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_73<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_68<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_74<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_69<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_80<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_75<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_76<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_77<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_78<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_79<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_12<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_13<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_14<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_15<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_16<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_17<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_18<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+WARNING:Xst:2404 -  FFs/Latches <display_19<7:6>> (without init value) have a constant value of 0 in block <MAIN>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# Multipliers                                          : 1
+ 32x10-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 4
+ 16-bit adder carry out                                : 1
+ 32-bit adder                                          : 2
+ 33-bit adder                                          : 1
+# Counters                                             : 7
+ 11-bit up counter                                     : 1
+ 14-bit up counter                                     : 1
+ 2-bit updown counter                                  : 1
+ 3-bit up counter                                      : 1
+ 32-bit up counter                                     : 2
+ 6-bit up counter                                      : 1
+# Accumulators                                         : 1
+ 32-bit up accumulator                                 : 1
+# Registers                                            : 1985
+ Flip-Flops                                            : 1985
+# Comparators                                          : 4
+ 11-bit comparator lessequal                           : 1
+ 32-bit comparator greatequal                          : 2
+ 32-bit comparator less                                : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <dis_0> (without init value) has a constant value of 0 in block <LCD_DISPLAY_MODULE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <display_64_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_64_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_64_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_64_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_64_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_59_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_59_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_59_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_59_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_59_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_70_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_70_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_70_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_70_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_70_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_66_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_66_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_66_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_66_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_66_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_65_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_65_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_65_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_65_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_65_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_71_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_71_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_71_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_71_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_71_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_61_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_61_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_61_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_61_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_61_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_56_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_56_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_56_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_56_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_56_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_63_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_63_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_63_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_63_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_63_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_57_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_57_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_57_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_57_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_57_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_62_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_62_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_62_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_62_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_62_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_58_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_58_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_58_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_58_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_58_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_69_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_69_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_69_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_69_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_69_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_75_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_75_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_75_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_75_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_75_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_76_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_76_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_76_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_76_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_76_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_77_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_77_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_77_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_77_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_77_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_78_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_78_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_78_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_78_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_78_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_79_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_79_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_79_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_79_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_79_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_72_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_72_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_72_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_72_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_72_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_67_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_67_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_67_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_67_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_67_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_73_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_73_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_73_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_73_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_73_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_68_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_68_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_68_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_68_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_68_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_80_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_80_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_80_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_80_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_80_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_74_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_74_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_74_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_74_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_74_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_18_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_18_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_18_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_18_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_18_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_19_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_19_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_19_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_19_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_19_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_41_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_41_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_41_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_41_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_41_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_42_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_42_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_42_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_42_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_42_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_43_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_43_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_43_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_43_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_43_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_44_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_44_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_44_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_44_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_44_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_13_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_13_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_13_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_13_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_13_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_12_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_12_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_12_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_12_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_12_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_14_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_14_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_14_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_14_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_14_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_15_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_15_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_15_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_15_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_15_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_16_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_16_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_16_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_16_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_16_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_17_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_17_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_17_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_17_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_17_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_53_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_53_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_53_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_53_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_53_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_49_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_49_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_49_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_49_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_49_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_48_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_48_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_48_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_48_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_48_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_54_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_54_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_54_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_54_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_54_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_60_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_60_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_60_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_60_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_60_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_55_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_55_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_55_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_55_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_55_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_51_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_51_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_51_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_51_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_51_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_50_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_50_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_50_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_50_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_50_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_45_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_45_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_45_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_45_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_45_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_46_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_46_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_46_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_46_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_46_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_52_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_52_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_52_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_52_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_52_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_47_1> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_47_2> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_47_3> (without init value) has a constant value of 0 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_47_4> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_47_5> (without init value) has a constant value of 1 in block <MAIN>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <xn_1_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_1_8> <xn_1_9> <xn_1_10> <xn_1_11> <xn_1_12> <xn_1_13> <xn_1_14> <xn_1_15> <xn_1_16> <xn_1_17> <xn_1_18> <xn_1_19> <xn_1_20> <xn_1_21> <xn_1_22> <xn_1_23> <xn_1_24> <xn_1_25> <xn_1_26> <xn_1_27> <xn_1_28> <xn_1_29> <xn_1_30> 
+INFO:Xst:2261 - The FF/Latch <xn_34_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_34_8> <xn_34_9> <xn_34_10> <xn_34_11> <xn_34_12> <xn_34_13> <xn_34_14> <xn_34_15> <xn_34_16> <xn_34_17> <xn_34_18> <xn_34_19> <xn_34_20> <xn_34_21> <xn_34_22> <xn_34_23> <xn_34_24> <xn_34_25> <xn_34_26> <xn_34_27> <xn_34_28> <xn_34_29> <xn_34_30> 
+INFO:Xst:2261 - The FF/Latch <xn_29_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_29_8> <xn_29_9> <xn_29_10> <xn_29_11> <xn_29_12> <xn_29_13> <xn_29_14> <xn_29_15> <xn_29_16> <xn_29_17> <xn_29_18> <xn_29_19> <xn_29_20> <xn_29_21> <xn_29_22> <xn_29_23> <xn_29_24> <xn_29_25> <xn_29_26> <xn_29_27> <xn_29_28> <xn_29_29> <xn_29_30> 
+INFO:Xst:2261 - The FF/Latch <xn_15_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_15_8> <xn_15_9> <xn_15_10> <xn_15_11> <xn_15_12> <xn_15_13> <xn_15_14> <xn_15_15> <xn_15_16> <xn_15_17> <xn_15_18> <xn_15_19> <xn_15_20> <xn_15_21> <xn_15_22> <xn_15_23> <xn_15_24> <xn_15_25> <xn_15_26> <xn_15_27> <xn_15_28> <xn_15_29> <xn_15_30> 
+INFO:Xst:2261 - The FF/Latch <xn_20_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_20_8> <xn_20_9> <xn_20_10> <xn_20_11> <xn_20_12> <xn_20_13> <xn_20_14> <xn_20_15> <xn_20_16> <xn_20_17> <xn_20_18> <xn_20_19> <xn_20_20> <xn_20_21> <xn_20_22> <xn_20_23> <xn_20_24> <xn_20_25> <xn_20_26> <xn_20_27> <xn_20_28> <xn_20_29> <xn_20_30> 
+INFO:Xst:2261 - The FF/Latch <xn_43_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_43_8> <xn_43_9> <xn_43_10> <xn_43_11> <xn_43_12> <xn_43_13> <xn_43_14> <xn_43_15> <xn_43_16> <xn_43_17> <xn_43_18> <xn_43_19> <xn_43_20> <xn_43_21> <xn_43_22> <xn_43_23> <xn_43_24> <xn_43_25> <xn_43_26> <xn_43_27> <xn_43_28> <xn_43_29> <xn_43_30> 
+INFO:Xst:2261 - The FF/Latch <xn_38_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_38_8> <xn_38_9> <xn_38_10> <xn_38_11> <xn_38_12> <xn_38_13> <xn_38_14> <xn_38_15> <xn_38_16> <xn_38_17> <xn_38_18> <xn_38_19> <xn_38_20> <xn_38_21> <xn_38_22> <xn_38_23> <xn_38_24> <xn_38_25> <xn_38_26> <xn_38_27> <xn_38_28> <xn_38_29> <xn_38_30> 
+INFO:Xst:2261 - The FF/Latch <xn_5_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_5_8> <xn_5_9> <xn_5_10> <xn_5_11> <xn_5_12> <xn_5_13> <xn_5_14> <xn_5_15> <xn_5_16> <xn_5_17> <xn_5_18> <xn_5_19> <xn_5_20> <xn_5_21> <xn_5_22> <xn_5_23> <xn_5_24> <xn_5_25> <xn_5_26> <xn_5_27> <xn_5_28> <xn_5_29> <xn_5_30> 
+INFO:Xst:2261 - The FF/Latch <xn_19_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_19_8> <xn_19_9> <xn_19_10> <xn_19_11> <xn_19_12> <xn_19_13> <xn_19_14> <xn_19_15> <xn_19_16> <xn_19_17> <xn_19_18> <xn_19_19> <xn_19_20> <xn_19_21> <xn_19_22> <xn_19_23> <xn_19_24> <xn_19_25> <xn_19_26> <xn_19_27> <xn_19_28> <xn_19_29> <xn_19_30> 
+INFO:Xst:2261 - The FF/Latch <xn_24_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_24_8> <xn_24_9> <xn_24_10> <xn_24_11> <xn_24_12> <xn_24_13> <xn_24_14> <xn_24_15> <xn_24_16> <xn_24_17> <xn_24_18> <xn_24_19> <xn_24_20> <xn_24_21> <xn_24_22> <xn_24_23> <xn_24_24> <xn_24_25> <xn_24_26> <xn_24_27> <xn_24_28> <xn_24_29> <xn_24_30> 
+INFO:Xst:2261 - The FF/Latch <xn_10_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_10_8> <xn_10_9> <xn_10_10> <xn_10_11> <xn_10_12> <xn_10_13> <xn_10_14> <xn_10_15> <xn_10_16> <xn_10_17> <xn_10_18> <xn_10_19> <xn_10_20> <xn_10_21> <xn_10_22> <xn_10_23> <xn_10_24> <xn_10_25> <xn_10_26> <xn_10_27> <xn_10_28> <xn_10_29> <xn_10_30> 
+INFO:Xst:2261 - The FF/Latch <xn_47_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_47_8> <xn_47_9> <xn_47_10> <xn_47_11> <xn_47_12> <xn_47_13> <xn_47_14> <xn_47_15> <xn_47_16> <xn_47_17> <xn_47_18> <xn_47_19> <xn_47_20> <xn_47_21> <xn_47_22> <xn_47_23> <xn_47_24> <xn_47_25> <xn_47_26> <xn_47_27> <xn_47_28> <xn_47_29> <xn_47_30> 
+INFO:Xst:2261 - The FF/Latch <xn_9_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_9_8> <xn_9_9> <xn_9_10> <xn_9_11> <xn_9_12> <xn_9_13> <xn_9_14> <xn_9_15> <xn_9_16> <xn_9_17> <xn_9_18> <xn_9_19> <xn_9_20> <xn_9_21> <xn_9_22> <xn_9_23> <xn_9_24> <xn_9_25> <xn_9_26> <xn_9_27> <xn_9_28> <xn_9_29> <xn_9_30> 
+INFO:Xst:2261 - The FF/Latch <xn_28_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_28_8> <xn_28_9> <xn_28_10> <xn_28_11> <xn_28_12> <xn_28_13> <xn_28_14> <xn_28_15> <xn_28_16> <xn_28_17> <xn_28_18> <xn_28_19> <xn_28_20> <xn_28_21> <xn_28_22> <xn_28_23> <xn_28_24> <xn_28_25> <xn_28_26> <xn_28_27> <xn_28_28> <xn_28_29> <xn_28_30> 
+INFO:Xst:2261 - The FF/Latch <xn_33_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_33_8> <xn_33_9> <xn_33_10> <xn_33_11> <xn_33_12> <xn_33_13> <xn_33_14> <xn_33_15> <xn_33_16> <xn_33_17> <xn_33_18> <xn_33_19> <xn_33_20> <xn_33_21> <xn_33_22> <xn_33_23> <xn_33_24> <xn_33_25> <xn_33_26> <xn_33_27> <xn_33_28> <xn_33_29> <xn_33_30> 
+INFO:Xst:2261 - The FF/Latch <xn_14_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_14_8> <xn_14_9> <xn_14_10> <xn_14_11> <xn_14_12> <xn_14_13> <xn_14_14> <xn_14_15> <xn_14_16> <xn_14_17> <xn_14_18> <xn_14_19> <xn_14_20> <xn_14_21> <xn_14_22> <xn_14_23> <xn_14_24> <xn_14_25> <xn_14_26> <xn_14_27> <xn_14_28> <xn_14_29> <xn_14_30> 
+INFO:Xst:2261 - The FF/Latch <xn_42_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_42_8> <xn_42_9> <xn_42_10> <xn_42_11> <xn_42_12> <xn_42_13> <xn_42_14> <xn_42_15> <xn_42_16> <xn_42_17> <xn_42_18> <xn_42_19> <xn_42_20> <xn_42_21> <xn_42_22> <xn_42_23> <xn_42_24> <xn_42_25> <xn_42_26> <xn_42_27> <xn_42_28> <xn_42_29> <xn_42_30> 
+INFO:Xst:2261 - The FF/Latch <xn_37_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_37_8> <xn_37_9> <xn_37_10> <xn_37_11> <xn_37_12> <xn_37_13> <xn_37_14> <xn_37_15> <xn_37_16> <xn_37_17> <xn_37_18> <xn_37_19> <xn_37_20> <xn_37_21> <xn_37_22> <xn_37_23> <xn_37_24> <xn_37_25> <xn_37_26> <xn_37_27> <xn_37_28> <xn_37_29> <xn_37_30> 
+INFO:Xst:2261 - The FF/Latch <xn_4_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_4_8> <xn_4_9> <xn_4_10> <xn_4_11> <xn_4_12> <xn_4_13> <xn_4_14> <xn_4_15> <xn_4_16> <xn_4_17> <xn_4_18> <xn_4_19> <xn_4_20> <xn_4_21> <xn_4_22> <xn_4_23> <xn_4_24> <xn_4_25> <xn_4_26> <xn_4_27> <xn_4_28> <xn_4_29> <xn_4_30> 
+INFO:Xst:2261 - The FF/Latch <xn_23_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_23_8> <xn_23_9> <xn_23_10> <xn_23_11> <xn_23_12> <xn_23_13> <xn_23_14> <xn_23_15> <xn_23_16> <xn_23_17> <xn_23_18> <xn_23_19> <xn_23_20> <xn_23_21> <xn_23_22> <xn_23_23> <xn_23_24> <xn_23_25> <xn_23_26> <xn_23_27> <xn_23_28> <xn_23_29> <xn_23_30> 
+INFO:Xst:2261 - The FF/Latch <xn_18_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_18_8> <xn_18_9> <xn_18_10> <xn_18_11> <xn_18_12> <xn_18_13> <xn_18_14> <xn_18_15> <xn_18_16> <xn_18_17> <xn_18_18> <xn_18_19> <xn_18_20> <xn_18_21> <xn_18_22> <xn_18_23> <xn_18_24> <xn_18_25> <xn_18_26> <xn_18_27> <xn_18_28> <xn_18_29> <xn_18_30> 
+INFO:Xst:2261 - The FF/Latch <xn_46_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_46_8> <xn_46_9> <xn_46_10> <xn_46_11> <xn_46_12> <xn_46_13> <xn_46_14> <xn_46_15> <xn_46_16> <xn_46_17> <xn_46_18> <xn_46_19> <xn_46_20> <xn_46_21> <xn_46_22> <xn_46_23> <xn_46_24> <xn_46_25> <xn_46_26> <xn_46_27> <xn_46_28> <xn_46_29> <xn_46_30> 
+INFO:Xst:2261 - The FF/Latch <xn_8_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_8_8> <xn_8_9> <xn_8_10> <xn_8_11> <xn_8_12> <xn_8_13> <xn_8_14> <xn_8_15> <xn_8_16> <xn_8_17> <xn_8_18> <xn_8_19> <xn_8_20> <xn_8_21> <xn_8_22> <xn_8_23> <xn_8_24> <xn_8_25> <xn_8_26> <xn_8_27> <xn_8_28> <xn_8_29> <xn_8_30> 
+INFO:Xst:2261 - The FF/Latch <xn_27_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_27_8> <xn_27_9> <xn_27_10> <xn_27_11> <xn_27_12> <xn_27_13> <xn_27_14> <xn_27_15> <xn_27_16> <xn_27_17> <xn_27_18> <xn_27_19> <xn_27_20> <xn_27_21> <xn_27_22> <xn_27_23> <xn_27_24> <xn_27_25> <xn_27_26> <xn_27_27> <xn_27_28> <xn_27_29> <xn_27_30> 
+INFO:Xst:2261 - The FF/Latch <xn_32_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_32_8> <xn_32_9> <xn_32_10> <xn_32_11> <xn_32_12> <xn_32_13> <xn_32_14> <xn_32_15> <xn_32_16> <xn_32_17> <xn_32_18> <xn_32_19> <xn_32_20> <xn_32_21> <xn_32_22> <xn_32_23> <xn_32_24> <xn_32_25> <xn_32_26> <xn_32_27> <xn_32_28> <xn_32_29> <xn_32_30> 
+INFO:Xst:2261 - The FF/Latch <xn_13_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_13_8> <xn_13_9> <xn_13_10> <xn_13_11> <xn_13_12> <xn_13_13> <xn_13_14> <xn_13_15> <xn_13_16> <xn_13_17> <xn_13_18> <xn_13_19> <xn_13_20> <xn_13_21> <xn_13_22> <xn_13_23> <xn_13_24> <xn_13_25> <xn_13_26> <xn_13_27> <xn_13_28> <xn_13_29> <xn_13_30> 
+INFO:Xst:2261 - The FF/Latch <xn_36_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_36_8> <xn_36_9> <xn_36_10> <xn_36_11> <xn_36_12> <xn_36_13> <xn_36_14> <xn_36_15> <xn_36_16> <xn_36_17> <xn_36_18> <xn_36_19> <xn_36_20> <xn_36_21> <xn_36_22> <xn_36_23> <xn_36_24> <xn_36_25> <xn_36_26> <xn_36_27> <xn_36_28> <xn_36_29> <xn_36_30> 
+INFO:Xst:2261 - The FF/Latch <xn_41_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_41_8> <xn_41_9> <xn_41_10> <xn_41_11> <xn_41_12> <xn_41_13> <xn_41_14> <xn_41_15> <xn_41_16> <xn_41_17> <xn_41_18> <xn_41_19> <xn_41_20> <xn_41_21> <xn_41_22> <xn_41_23> <xn_41_24> <xn_41_25> <xn_41_26> <xn_41_27> <xn_41_28> <xn_41_29> <xn_41_30> 
+INFO:Xst:2261 - The FF/Latch <xn_3_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_3_8> <xn_3_9> <xn_3_10> <xn_3_11> <xn_3_12> <xn_3_13> <xn_3_14> <xn_3_15> <xn_3_16> <xn_3_17> <xn_3_18> <xn_3_19> <xn_3_20> <xn_3_21> <xn_3_22> <xn_3_23> <xn_3_24> <xn_3_25> <xn_3_26> <xn_3_27> <xn_3_28> <xn_3_29> <xn_3_30> 
+INFO:Xst:2261 - The FF/Latch <xn_17_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_17_8> <xn_17_9> <xn_17_10> <xn_17_11> <xn_17_12> <xn_17_13> <xn_17_14> <xn_17_15> <xn_17_16> <xn_17_17> <xn_17_18> <xn_17_19> <xn_17_20> <xn_17_21> <xn_17_22> <xn_17_23> <xn_17_24> <xn_17_25> <xn_17_26> <xn_17_27> <xn_17_28> <xn_17_29> <xn_17_30> 
+INFO:Xst:2261 - The FF/Latch <xn_22_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_22_8> <xn_22_9> <xn_22_10> <xn_22_11> <xn_22_12> <xn_22_13> <xn_22_14> <xn_22_15> <xn_22_16> <xn_22_17> <xn_22_18> <xn_22_19> <xn_22_20> <xn_22_21> <xn_22_22> <xn_22_23> <xn_22_24> <xn_22_25> <xn_22_26> <xn_22_27> <xn_22_28> <xn_22_29> <xn_22_30> 
+INFO:Xst:2261 - The FF/Latch <xn_50_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_50_8> <xn_50_9> <xn_50_10> <xn_50_11> <xn_50_12> <xn_50_13> <xn_50_14> <xn_50_15> <xn_50_16> <xn_50_17> <xn_50_18> <xn_50_19> <xn_50_20> <xn_50_21> <xn_50_22> <xn_50_23> <xn_50_24> <xn_50_25> <xn_50_26> <xn_50_27> <xn_50_28> <xn_50_29> <xn_50_30> 
+INFO:Xst:2261 - The FF/Latch <xn_45_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_45_8> <xn_45_9> <xn_45_10> <xn_45_11> <xn_45_12> <xn_45_13> <xn_45_14> <xn_45_15> <xn_45_16> <xn_45_17> <xn_45_18> <xn_45_19> <xn_45_20> <xn_45_21> <xn_45_22> <xn_45_23> <xn_45_24> <xn_45_25> <xn_45_26> <xn_45_27> <xn_45_28> <xn_45_29> <xn_45_30> 
+INFO:Xst:2261 - The FF/Latch <xn_7_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_7_8> <xn_7_9> <xn_7_10> <xn_7_11> <xn_7_12> <xn_7_13> <xn_7_14> <xn_7_15> <xn_7_16> <xn_7_17> <xn_7_18> <xn_7_19> <xn_7_20> <xn_7_21> <xn_7_22> <xn_7_23> <xn_7_24> <xn_7_25> <xn_7_26> <xn_7_27> <xn_7_28> <xn_7_29> <xn_7_30> 
+INFO:Xst:2261 - The FF/Latch <xn_31_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_31_8> <xn_31_9> <xn_31_10> <xn_31_11> <xn_31_12> <xn_31_13> <xn_31_14> <xn_31_15> <xn_31_16> <xn_31_17> <xn_31_18> <xn_31_19> <xn_31_20> <xn_31_21> <xn_31_22> <xn_31_23> <xn_31_24> <xn_31_25> <xn_31_26> <xn_31_27> <xn_31_28> <xn_31_29> <xn_31_30> 
+INFO:Xst:2261 - The FF/Latch <xn_26_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_26_8> <xn_26_9> <xn_26_10> <xn_26_11> <xn_26_12> <xn_26_13> <xn_26_14> <xn_26_15> <xn_26_16> <xn_26_17> <xn_26_18> <xn_26_19> <xn_26_20> <xn_26_21> <xn_26_22> <xn_26_23> <xn_26_24> <xn_26_25> <xn_26_26> <xn_26_27> <xn_26_28> <xn_26_29> <xn_26_30> 
+INFO:Xst:2261 - The FF/Latch <xn_12_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_12_8> <xn_12_9> <xn_12_10> <xn_12_11> <xn_12_12> <xn_12_13> <xn_12_14> <xn_12_15> <xn_12_16> <xn_12_17> <xn_12_18> <xn_12_19> <xn_12_20> <xn_12_21> <xn_12_22> <xn_12_23> <xn_12_24> <xn_12_25> <xn_12_26> <xn_12_27> <xn_12_28> <xn_12_29> <xn_12_30> 
+INFO:Xst:2261 - The FF/Latch <xn_49_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_49_8> <xn_49_9> <xn_49_10> <xn_49_11> <xn_49_12> <xn_49_13> <xn_49_14> <xn_49_15> <xn_49_16> <xn_49_17> <xn_49_18> <xn_49_19> <xn_49_20> <xn_49_21> <xn_49_22> <xn_49_23> <xn_49_24> <xn_49_25> <xn_49_26> <xn_49_27> <xn_49_28> <xn_49_29> <xn_49_30> 
+INFO:Xst:2261 - The FF/Latch <xn_40_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_40_8> <xn_40_9> <xn_40_10> <xn_40_11> <xn_40_12> <xn_40_13> <xn_40_14> <xn_40_15> <xn_40_16> <xn_40_17> <xn_40_18> <xn_40_19> <xn_40_20> <xn_40_21> <xn_40_22> <xn_40_23> <xn_40_24> <xn_40_25> <xn_40_26> <xn_40_27> <xn_40_28> <xn_40_29> <xn_40_30> 
+INFO:Xst:2261 - The FF/Latch <xn_35_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_35_8> <xn_35_9> <xn_35_10> <xn_35_11> <xn_35_12> <xn_35_13> <xn_35_14> <xn_35_15> <xn_35_16> <xn_35_17> <xn_35_18> <xn_35_19> <xn_35_20> <xn_35_21> <xn_35_22> <xn_35_23> <xn_35_24> <xn_35_25> <xn_35_26> <xn_35_27> <xn_35_28> <xn_35_29> <xn_35_30> 
+INFO:Xst:2261 - The FF/Latch <xn_2_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_2_8> <xn_2_9> <xn_2_10> <xn_2_11> <xn_2_12> <xn_2_13> <xn_2_14> <xn_2_15> <xn_2_16> <xn_2_17> <xn_2_18> <xn_2_19> <xn_2_20> <xn_2_21> <xn_2_22> <xn_2_23> <xn_2_24> <xn_2_25> <xn_2_26> <xn_2_27> <xn_2_28> <xn_2_29> <xn_2_30> 
+INFO:Xst:2261 - The FF/Latch <xn_16_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_16_8> <xn_16_9> <xn_16_10> <xn_16_11> <xn_16_12> <xn_16_13> <xn_16_14> <xn_16_15> <xn_16_16> <xn_16_17> <xn_16_18> <xn_16_19> <xn_16_20> <xn_16_21> <xn_16_22> <xn_16_23> <xn_16_24> <xn_16_25> <xn_16_26> <xn_16_27> <xn_16_28> <xn_16_29> <xn_16_30> 
+INFO:Xst:2261 - The FF/Latch <xn_21_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_21_8> <xn_21_9> <xn_21_10> <xn_21_11> <xn_21_12> <xn_21_13> <xn_21_14> <xn_21_15> <xn_21_16> <xn_21_17> <xn_21_18> <xn_21_19> <xn_21_20> <xn_21_21> <xn_21_22> <xn_21_23> <xn_21_24> <xn_21_25> <xn_21_26> <xn_21_27> <xn_21_28> <xn_21_29> <xn_21_30> 
+INFO:Xst:2261 - The FF/Latch <xn_39_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_39_8> <xn_39_9> <xn_39_10> <xn_39_11> <xn_39_12> <xn_39_13> <xn_39_14> <xn_39_15> <xn_39_16> <xn_39_17> <xn_39_18> <xn_39_19> <xn_39_20> <xn_39_21> <xn_39_22> <xn_39_23> <xn_39_24> <xn_39_25> <xn_39_26> <xn_39_27> <xn_39_28> <xn_39_29> <xn_39_30> 
+INFO:Xst:2261 - The FF/Latch <xn_44_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_44_8> <xn_44_9> <xn_44_10> <xn_44_11> <xn_44_12> <xn_44_13> <xn_44_14> <xn_44_15> <xn_44_16> <xn_44_17> <xn_44_18> <xn_44_19> <xn_44_20> <xn_44_21> <xn_44_22> <xn_44_23> <xn_44_24> <xn_44_25> <xn_44_26> <xn_44_27> <xn_44_28> <xn_44_29> <xn_44_30> 
+INFO:Xst:2261 - The FF/Latch <xn_6_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_6_8> <xn_6_9> <xn_6_10> <xn_6_11> <xn_6_12> <xn_6_13> <xn_6_14> <xn_6_15> <xn_6_16> <xn_6_17> <xn_6_18> <xn_6_19> <xn_6_20> <xn_6_21> <xn_6_22> <xn_6_23> <xn_6_24> <xn_6_25> <xn_6_26> <xn_6_27> <xn_6_28> <xn_6_29> <xn_6_30> 
+INFO:Xst:2261 - The FF/Latch <xn_30_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_30_8> <xn_30_9> <xn_30_10> <xn_30_11> <xn_30_12> <xn_30_13> <xn_30_14> <xn_30_15> <xn_30_16> <xn_30_17> <xn_30_18> <xn_30_19> <xn_30_20> <xn_30_21> <xn_30_22> <xn_30_23> <xn_30_24> <xn_30_25> <xn_30_26> <xn_30_27> <xn_30_28> <xn_30_29> <xn_30_30> 
+INFO:Xst:2261 - The FF/Latch <xn_25_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_25_8> <xn_25_9> <xn_25_10> <xn_25_11> <xn_25_12> <xn_25_13> <xn_25_14> <xn_25_15> <xn_25_16> <xn_25_17> <xn_25_18> <xn_25_19> <xn_25_20> <xn_25_21> <xn_25_22> <xn_25_23> <xn_25_24> <xn_25_25> <xn_25_26> <xn_25_27> <xn_25_28> <xn_25_29> <xn_25_30> 
+INFO:Xst:2261 - The FF/Latch <xn_11_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_11_8> <xn_11_9> <xn_11_10> <xn_11_11> <xn_11_12> <xn_11_13> <xn_11_14> <xn_11_15> <xn_11_16> <xn_11_17> <xn_11_18> <xn_11_19> <xn_11_20> <xn_11_21> <xn_11_22> <xn_11_23> <xn_11_24> <xn_11_25> <xn_11_26> <xn_11_27> <xn_11_28> <xn_11_29> <xn_11_30> 
+INFO:Xst:2261 - The FF/Latch <tp_32> in Unit <MAIN> is equivalent to the following 7 FFs/Latches, which will be removed : <tp_33> <tp_34> <tp_35> <tp_36> <tp_37> <tp_38> <tp_39> 
+INFO:Xst:2261 - The FF/Latch <xn_48_7> in Unit <MAIN> is equivalent to the following 23 FFs/Latches, which will be removed : <xn_48_8> <xn_48_9> <xn_48_10> <xn_48_11> <xn_48_12> <xn_48_13> <xn_48_14> <xn_48_15> <xn_48_16> <xn_48_17> <xn_48_18> <xn_48_19> <xn_48_20> <xn_48_21> <xn_48_22> <xn_48_23> <xn_48_24> <xn_48_25> <xn_48_26> <xn_48_27> <xn_48_28> <xn_48_29> <xn_48_30> 
+INFO:Xst:2261 - The FF/Latch <display_73_0> in Unit <MAIN> is equivalent to the following 7 FFs/Latches, which will be removed : <display_80_0> <display_74_0> <display_75_0> <display_76_0> <display_77_0> <display_78_0> <display_79_0> 
+
+Optimizing unit <MAIN> ...
+
+Optimizing unit <LCD_DISPLAY_MODULE> ...
+
+Optimizing unit <BaudTickGen> ...
+
+Optimizing unit <async_receiver> ...
+WARNING:Xst:2677 - Node <m4/GapCnt_5> of sequential type is unconnected in block <MAIN>.
+WARNING:Xst:2677 - Node <m4/GapCnt_4> of sequential type is unconnected in block <MAIN>.
+WARNING:Xst:2677 - Node <m4/GapCnt_3> of sequential type is unconnected in block <MAIN>.
+WARNING:Xst:2677 - Node <m4/GapCnt_2> of sequential type is unconnected in block <MAIN>.
+WARNING:Xst:2677 - Node <m4/GapCnt_1> of sequential type is unconnected in block <MAIN>.
+WARNING:Xst:2677 - Node <m4/GapCnt_0> of sequential type is unconnected in block <MAIN>.
+WARNING:Xst:2677 - Node <m4/RxD_endofpacket> of sequential type is unconnected in block <MAIN>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block MAIN, actual ratio is 72.
+FlipFlop ind_3 has been replicated 1 time(s)
+FlipFlop ind_4 has been replicated 1 time(s)
+FlipFlop ind_5 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <MAIN> :
+	Found 2-bit shift register for signal <m4/RxD_sync_1>.
+Unit <MAIN> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 719
+ Flip-Flops                                            : 719
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : MAIN.ngr
+Top Level Output File Name         : MAIN
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 14
+
+Cell Usage :
+# BELS                             : 1645
+#      GND                         : 1
+#      INV                         : 20
+#      LUT1                        : 94
+#      LUT2                        : 116
+#      LUT3                        : 127
+#      LUT3_D                      : 11
+#      LUT3_L                      : 2
+#      LUT4                        : 476
+#      LUT4_D                      : 10
+#      LUT4_L                      : 4
+#      MUXCY                       : 522
+#      MUXF5                       : 11
+#      MUXF6                       : 1
+#      VCC                         : 1
+#      XORCY                       : 249
+# FlipFlops/Latches                : 720
+#      FD                          : 41
+#      FDE                         : 674
+#      FDR                         : 2
+#      FDRE                        : 3
+# Shift Registers                  : 1
+#      SRL16E                      : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 12
+#      IBUF                        : 1
+#      OBUF                        : 11
+# MULTs                            : 2
+#      MULT18X18SIO                : 2
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100etq144-5 
+
+ Number of Slices:                      690  out of    960    71%  
+ Number of Slice Flip Flops:            720  out of   1920    37%  
+ Number of 4 input LUTs:                861  out of   1920    44%  
+    Number used as logic:               860
+    Number used as Shift registers:       1
+ Number of IOs:                          14
+ Number of bonded IOBs:                  13  out of    108    12%  
+ Number of MULT18X18SIOs:                 2  out of      4    50%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 721   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 17.321ns (Maximum Frequency: 57.733MHz)
+   Minimum input arrival time before clock: 1.829ns
+   Maximum output required time after clock: 4.063ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 17.321ns (frequency: 57.733MHz)
+  Total number of paths / destination ports: 19337338 / 1402
+-------------------------------------------------------------------------
+Delay:               17.321ns (Levels of Logic = 45)
+  Source:            ind_0 (FF)
+  Destination:       tp_32 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: ind_0 to tp_32
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             35   0.514   1.226  ind_0 (ind_0)
+     LUT3_D:I0->O          2   0.612   0.383  Co_effecient_cmp_eq00241_SW0 (N54)
+     LUT4:I3->O           12   0.612   0.820  Co_effecient_cmp_eq00241 (Co_effecient_cmp_eq0024)
+     LUT4:I3->O            1   0.612   0.000  xn_mux0000<7>_wg_lut<3> (xn_mux0000<7>_wg_lut<3>)
+     MUXCY:S->O            1   0.404   0.000  xn_mux0000<7>_wg_cy<3> (xn_mux0000<7>_wg_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<4> (xn_mux0000<7>_wg_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<5> (xn_mux0000<7>_wg_cy<5>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<6> (xn_mux0000<7>_wg_cy<6>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<7> (xn_mux0000<7>_wg_cy<7>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<8> (xn_mux0000<7>_wg_cy<8>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<9> (xn_mux0000<7>_wg_cy<9>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<10> (xn_mux0000<7>_wg_cy<10>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<11> (xn_mux0000<7>_wg_cy<11>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<12> (xn_mux0000<7>_wg_cy<12>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<13> (xn_mux0000<7>_wg_cy<13>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<14> (xn_mux0000<7>_wg_cy<14>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<15> (xn_mux0000<7>_wg_cy<15>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<16> (xn_mux0000<7>_wg_cy<16>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<17> (xn_mux0000<7>_wg_cy<17>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<18> (xn_mux0000<7>_wg_cy<18>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<19> (xn_mux0000<7>_wg_cy<19>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<20> (xn_mux0000<7>_wg_cy<20>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<21> (xn_mux0000<7>_wg_cy<21>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<22> (xn_mux0000<7>_wg_cy<22>)
+     MUXCY:CI->O           1   0.052   0.000  xn_mux0000<7>_wg_cy<23> (xn_mux0000<7>_wg_cy<23>)
+     MUXCY:CI->O          24   0.399   1.064  xn_mux0000<7>_wg_cy<24> (xn_mux0000<7>_wg_cy<24>)
+     MULT18X18SIO:A7->P17    1   4.331   0.426  Mmult_tp_mult0001 (Mmult_tp_mult0001_P_to_Adder_A_17)
+     LUT2:I1->O            1   0.612   0.000  Mmult_tp_mult00010_Madd_lut<17> (Mmult_tp_mult00010_Madd_lut<17>)
+     MUXCY:S->O            1   0.404   0.000  Mmult_tp_mult00010_Madd_cy<17> (Mmult_tp_mult00010_Madd_cy<17>)
+     MUXCY:CI->O           1   0.052   0.000  Mmult_tp_mult00010_Madd_cy<18> (Mmult_tp_mult00010_Madd_cy<18>)
+     MUXCY:CI->O           1   0.052   0.000  Mmult_tp_mult00010_Madd_cy<19> (Mmult_tp_mult00010_Madd_cy<19>)
+     MUXCY:CI->O           1   0.052   0.000  Mmult_tp_mult00010_Madd_cy<20> (Mmult_tp_mult00010_Madd_cy<20>)
+     MUXCY:CI->O           1   0.052   0.000  Mmult_tp_mult00010_Madd_cy<21> (Mmult_tp_mult00010_Madd_cy<21>)
+     MUXCY:CI->O           1   0.052   0.000  Mmult_tp_mult00010_Madd_cy<22> (Mmult_tp_mult00010_Madd_cy<22>)
+     MUXCY:CI->O           1   0.052   0.000  Mmult_tp_mult00010_Madd_cy<23> (Mmult_tp_mult00010_Madd_cy<23>)
+     MUXCY:CI->O           1   0.052   0.000  Mmult_tp_mult00010_Madd_cy<24> (Mmult_tp_mult00010_Madd_cy<24>)
+     MUXCY:CI->O           1   0.052   0.000  Mmult_tp_mult00010_Madd_cy<25> (Mmult_tp_mult00010_Madd_cy<25>)
+     MUXCY:CI->O           1   0.052   0.000  Mmult_tp_mult00010_Madd_cy<26> (Mmult_tp_mult00010_Madd_cy<26>)
+     MUXCY:CI->O           1   0.052   0.000  Mmult_tp_mult00010_Madd_cy<27> (Mmult_tp_mult00010_Madd_cy<27>)
+     MUXCY:CI->O           1   0.052   0.000  Mmult_tp_mult00010_Madd_cy<28> (Mmult_tp_mult00010_Madd_cy<28>)
+     MUXCY:CI->O           1   0.052   0.000  Mmult_tp_mult00010_Madd_cy<29> (Mmult_tp_mult00010_Madd_cy<29>)
+     MUXCY:CI->O           0   0.052   0.000  Mmult_tp_mult00010_Madd_cy<30> (Mmult_tp_mult00010_Madd_cy<30>)
+     XORCY:CI->O           3   0.699   0.520  Mmult_tp_mult00010_Madd_xor<31> (tp_mult0001<31>)
+     LUT2:I1->O            1   0.612   0.000  Madd_tp_add0000_lut<31>1 (Madd_tp_add0000_lut<31>)
+     MUXCY:S->O            0   0.404   0.000  Madd_tp_add0000_cy<31> (Madd_tp_add0000_cy<31>)
+     XORCY:CI->O           1   0.699   0.000  Madd_tp_add0000_xor<32> (tp_add0000<32>)
+     FDE:D                     0.268          tp_32
+    ----------------------------------------
+    Total                     17.321ns (12.882ns logic, 4.439ns route)
+                                       (74.4% logic, 25.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.829ns (Levels of Logic = 1)
+  Source:            rxd (PAD)
+  Destination:       m4/Mshreg_RxD_sync_1 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rxd to m4/Mshreg_RxD_sync_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  rxd_IBUF (rxd_IBUF)
+     SRL16E:D                  0.366          m4/Mshreg_RxD_sync_1
+    ----------------------------------------
+    Total                      1.829ns (1.472ns logic, 0.357ns route)
+                                       (80.5% logic, 19.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Offset:              4.063ns (Levels of Logic = 1)
+  Source:            lab/dis_1 (FF)
+  Destination:       lcd_select (PAD)
+  Source Clock:      clk rising
+
+  Data Path: lab/dis_1 to lcd_select
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.514   0.380  lab/dis_1 (lab/dis_1)
+     OBUF:I->O                 3.169          lcd_select_OBUF (lcd_select)
+    ----------------------------------------
+    Total                      4.063ns (3.683ns logic, 0.380ns route)
+                                       (90.6% logic, 9.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 18.00 secs
+Total CPU time to Xst completion: 17.79 secs
+ 
+--> 
+
+Total memory usage is 212644 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  657 (   0 filtered)
+Number of infos    :   86 (   0 filtered)
+

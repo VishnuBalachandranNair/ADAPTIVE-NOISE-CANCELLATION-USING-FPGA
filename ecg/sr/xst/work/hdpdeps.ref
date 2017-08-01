@@ -1,0 +1,41 @@
+V3 24
+FL D:/siva/hw/ecg/1f_tx.vhd 2016/05/11.10:55:30 P.58f
+EN work/tx_uart_final 1490355375 FL D:/siva/hw/ecg/1f_tx.vhd \
+      PB ieee/std_logic_1164 1364358218 PB ieee/STD_LOGIC_UNSIGNED 1364358221 \
+      PB ieee/std_logic_arith 1364358219 PH work/ASCII_PACKAGE 1491982758
+AR work/tx_uart_final/final_tx_uart 1490355376 \
+      FL D:/siva/hw/ecg/1f_tx.vhd EN work/tx_uart_final 1490355375 CP tx_uart \
+      CP baud_rate
+FL D:/siva/hw/ecg/1tx_uart.vhd 2016/05/11.10:55:27 P.58f
+EN work/tx_uart 1490355371 FL D:/siva/hw/ecg/1tx_uart.vhd PB ieee/std_logic_1164 1364358218 \
+      PB ieee/STD_LOGIC_UNSIGNED 1364358221 PB ieee/std_logic_arith 1364358219 \
+      PH work/ASCII_PACKAGE 1491982758
+AR work/tx_uart/tx_uart 1490355372 \
+      FL D:/siva/hw/ecg/1tx_uart.vhd EN work/tx_uart 1490355371
+FL D:/siva/hw/ecg/ASCII_PACKAGE.vhd 2017/04/11.10:42:08 P.58f
+PH work/ASCII_PACKAGE 1491982758 FL D:/siva/hw/ecg/ASCII_PACKAGE.vhd \
+      PB ieee/std_logic_1164 1364358218
+FL D:/siva/hw/ecg/baud112.vhd 2016/05/11.10:55:05 P.58f
+EN work/baud_rate 1490355373 FL D:/siva/hw/ecg/baud112.vhd PB ieee/std_logic_1164 1364358218 \
+      PB ieee/std_logic_arith 1364358219 PB ieee/STD_LOGIC_SIGNED 1364358220
+AR work/baud_rate/behav_baud 1490355374 \
+      FL D:/siva/hw/ecg/baud112.vhd EN work/baud_rate 1490355373
+FL D:/siva/hw/ecg/LCD_DISPLAY_MODULE.vhd 2014/12/27.17:38:11 P.58f
+EN work/LCD_DISPLAY_MODULE 1491982761 FL D:/siva/hw/ecg/LCD_DISPLAY_MODULE.vhd \
+      PB ieee/std_logic_1164 1364358218 PB ieee/std_logic_arith 1364358219 \
+      PB ieee/STD_LOGIC_SIGNED 1364358220 PH work/ASCII_PACKAGE 1491982758 \
+      PB work/FUNCTION_SET 1491982760
+AR work/LCD_DISPLAY_MODULE/behav_lcd 1491982762 \
+      FL D:/siva/hw/ecg/LCD_DISPLAY_MODULE.vhd EN work/LCD_DISPLAY_MODULE 1491982761
+FL D:/siva/hw/ecg/lcd_function.vhd 2012/08/08.12:31:42 P.58f
+PH work/FUNCTION_SET 1491982759 FL D:/siva/hw/ecg/lcd_function.vhd \
+      PB ieee/std_logic_1164 1364358218 PB ieee/std_logic_arith 1364358219
+PB work/FUNCTION_SET 1491982760 \
+      FL D:/siva/hw/ecg/lcd_function.vhd PH work/FUNCTION_SET 1491982759
+FL D:/siva/hw/ecg/MAIN.vhd 2017/04/12.12:51:07 P.58f
+EN work/MAIN 1491982763 FL D:/siva/hw/ecg/MAIN.vhd PB ieee/std_logic_1164 1364358218 \
+      PB ieee/std_logic_arith 1364358219 PB ieee/STD_LOGIC_SIGNED 1364358220 \
+      PB ieee/NUMERIC_STD 1364358223 PH work/ASCII_PACKAGE 1491982758
+AR work/MAIN/BEHAV 1491982764 \
+      FL D:/siva/hw/ecg/MAIN.vhd EN work/MAIN 1491982763 CP async_receiver \
+      CP LCD_DISPLAY_MODULE

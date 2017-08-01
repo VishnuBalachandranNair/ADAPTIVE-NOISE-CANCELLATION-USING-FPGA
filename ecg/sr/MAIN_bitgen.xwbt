@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\siva\hw\ecg\sr\MAIN.ncd
+OUTFILE=D:\siva\hw\ecg\sr\MAIN.bit
+FAMILY=Spartan3E
+PART=xc3s100e-5tq144
+WORKINGDIR=D:\siva\hw\ecg\sr
+LICENSE=WebPack
+USER_INFO=__0_0_0

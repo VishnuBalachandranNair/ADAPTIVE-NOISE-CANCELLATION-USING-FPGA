@@ -1,0 +1,4 @@
+vhdl work "D:\siva\hw\ecg\lcd_function.vhd"
+vhdl work "D:\siva\hw\ecg\ASCII_PACKAGE.vhd"
+vhdl work "D:\siva\hw\ecg\LCD_DISPLAY_MODULE.vhd"
+vhdl work "D:\siva\hw\ecg\MAIN.vhd"

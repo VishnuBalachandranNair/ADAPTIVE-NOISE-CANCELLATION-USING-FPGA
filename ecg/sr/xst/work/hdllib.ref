@@ -1,0 +1,17 @@
+PH function_set NULL D:/siva/hw/ecg/lcd_function.vhd sub00/vhpl01 1491982759
+PH ascii_package NULL D:/siva/hw/ecg/ASCII_PACKAGE.vhd sub00/vhpl00 1491982758
+EN baud_rate NULL D:/siva/hw/ecg/baud112.vhd sub00/vhpl09 1490355373
+PB function_set function_set D:/siva/hw/ecg/lcd_function.vhd sub00/vhpl02 1491982760
+EN lcd_display_module NULL D:/siva/hw/ecg/LCD_DISPLAY_MODULE.vhd sub00/vhpl03 1491982761
+MO async_receiver NULL ../async.v vlg3A/async__receiver.bin 1491982758
+MO async_transmitter NULL ../async.v vlg32/async__transmitter.bin 1491982758
+EN main NULL D:/siva/hw/ecg/MAIN.vhd sub00/vhpl05 1491982763
+MO ASSERTION_ERROR NULL ../async.v vlg05/_a_s_s_e_r_t_i_o_n___e_r_r_o_r.bin 1491982758
+EN tx_uart_final NULL D:/siva/hw/ecg/1f_tx.vhd sub00/vhpl11 1490355375
+MO BaudTickGen NULL ../async.v vlg59/_baud_tick_gen.bin 1491982758
+AR main behav D:/siva/hw/ecg/MAIN.vhd sub00/vhpl06 1491982764
+AR tx_uart tx_uart D:/siva/hw/ecg/1tx_uart.vhd sub00/vhpl08 1490355372
+AR tx_uart_final final_tx_uart D:/siva/hw/ecg/1f_tx.vhd sub00/vhpl12 1490355376
+EN tx_uart NULL D:/siva/hw/ecg/1tx_uart.vhd sub00/vhpl07 1490355371
+AR lcd_display_module behav_lcd D:/siva/hw/ecg/LCD_DISPLAY_MODULE.vhd sub00/vhpl04 1491982762
+AR baud_rate behav_baud D:/siva/hw/ecg/baud112.vhd sub00/vhpl10 1490355374

@@ -1,0 +1,21 @@
+//! **************************************************************************
+// Written by: Map P.58f on Wed Apr 12 13:09:55 2017
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "P122" LEVEL 1;
+COMP "rxd" LOCATE = SITE "P33" LEVEL 1;
+COMP "lcd_data<0>" LOCATE = SITE "P124" LEVEL 1;
+COMP "lcd_data<1>" LOCATE = SITE "P132" LEVEL 1;
+COMP "lcd_data<2>" LOCATE = SITE "P112" LEVEL 1;
+COMP "lcd_data<3>" LOCATE = SITE "P113" LEVEL 1;
+COMP "lcd_data<4>" LOCATE = SITE "P116" LEVEL 1;
+COMP "lcd_data<5>" LOCATE = SITE "P117" LEVEL 1;
+COMP "lcd_data<6>" LOCATE = SITE "P134" LEVEL 1;
+COMP "lcd_data<7>" LOCATE = SITE "P135" LEVEL 1;
+COMP "lcd_enable" LOCATE = SITE "P140" LEVEL 1;
+COMP "lcd_select" LOCATE = SITE "P142" LEVEL 1;
+COMP "lcd_rw" LOCATE = SITE "P139" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+SCHEMATIC END;
+
